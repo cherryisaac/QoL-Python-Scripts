@@ -16,7 +16,12 @@ Future feature(s):
 - I want to be able to filter the text data so that it scrapes all the visible data and NOT the JavaScript data. 
 - I also want to be able to scrape the data from sites where after I login I can scrape that data and not just the data before I login.
 
-3. youtube_downloader
+3. YouTube_Downloader
 Function - This script downloads a video from YouTube. After running the script it prompts the user to input a youtube url for download. After the user puts the url in then the console outputs the title of the video and the amount of views it has then proceeds to download the video. The video goes into the specified pre-ordained folder.
 
-Future feature(s) - I want to add a prompt or way to download multiple videos at once and not just one at a time.
+4. Countdown_Timer
+Function - Prompts for time and counts down from your input time. To change when the time is printed to the console change time.sleep() and time_sec. Example: time.sleep(5) and time_sec -= 5 will print to the console after every 5 seconds of your input.
+
+5. Google_Search
+Function - Searches for a subject/topic in Google and clicks on the first link
+- Install seleniun with "pip install selenium"

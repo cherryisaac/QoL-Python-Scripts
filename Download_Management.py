@@ -9,10 +9,10 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
 
-# Your downloads folder directory...to be changed according to your os.
+# ** Your downloads folder directory...to be changed according to your os.
 source_dir = '/Users/isaaccherry/Downloads'
 
-# Your destination folders after filtering downloads...to be changed according to your os.
+# ** Your destination folders after filtering downloads...to be changed according to your os.
 dest_dir_docs = '/Users/isaaccherry/Documents/Docs'
 dest_dir_video = '/Users/isaaccherry/Movies'
 dest_dir_music = '/Users/isaaccherry/Music'
@@ -48,7 +48,7 @@ def sort_current_files():
         elif name.endswith(('.jpg', '.jpeg', '.png', '.gif', '.raw', '.avif')):
             dest = dest_dir_image
             move(dest, entry, name)
-        elif name.endswith(('.html', '.svg')):
+        elif name.endswith(('.html', '.svg', 'webp')):
             dest = dest_dir_webpages
             move(dest, entry, name) 
 
@@ -56,14 +56,14 @@ sort_current_files()
 
 def delete_files_after_90_days(folder, extensions):
   now = datetime.now()
-  # In the os.walk() function, dirs is a list of the names of the subdirectories in the current directory (i.e., root).
+  # ? In the os.walk() function, dirs is a list of the names of the subdirectories in the current directory (i.e. root).
   for root, dirs, files in os.walk(folder):
     for f in files:
       file_path = os.path.join(root, f)
       if (now - datetime.fromtimestamp(os.path.getctime(file_path))).days >= 90 and f.endswith(tuple(extensions)):
         os.remove(file_path)
 
-delete_files_after_90_days(source_dir, ['.rar', '.exe'])
+delete_files_after_90_days(source_dir, ['.rar', '.exe', '.dmg', '.gz', '.pkg'])
 
 print('All Done!')
 

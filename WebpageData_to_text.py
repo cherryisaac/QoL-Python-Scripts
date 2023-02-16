@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-# To install BeautifulSoup type "pip3 install beautifulsoup4" in the cmd bar below
+# ** To install BeautifulSoup type "pip3 install beautifulsoup4" in the cmd bar below
 
 # Make a request to a webpage
 url = 'http://www.csgnetwork.com/htmlcodetest.html'
